@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Каталог — Свежесть</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/catalog.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="/index.html" class="nav-logo">
+  <div class="logo-leaf">
+    <img src=" ../img/logo.webp" alt="Свежесть">
+  </div>
+  Свежесть
+</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="catalog.html" class="active">Каталог</a></li>
+      <li><a href="about.html">О нас</a></li>
+      
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">
+        <span>🛒</span>
+        <span class="cart-label">Корзина</span>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="../index.html">Главная</a>
+  <a href="catalog.html" class="active">Каталог</a>
+  <a href="about.html">О нас</a>
+  
+  <a href="contacts.html">Контакты</a>
+  <a href="cart.html" class="mob-cart">🛒 Корзина (<span class="cart-count">0</span>)</a>
+</div>
+
+<main>
+  <section class="catalog-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Главная</a>
+        <span class="sep">›</span>
+        <span>Каталог</span>
+      </div>
+      <h1 class="catalog-title">Каталог <em>товаров</em></h1>
+      <p class="catalog-sub">500+ позиций пива, напитков, чипсов и снеков — для вашего стола</p>
+    </div>
+  </section>
+
+  <section class="catalog-body">
+    <div class="container catalog-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="catalog-sidebar">
+        <div class="sidebar-block">
+          <h3>Категории</h3>
+          <ul class="cat-filter-list" id="catList">
+            <li><button class="cat-filter-btn active" data-cat="all">🛒 Все товары <span class="cf-count">36</span></button></li>
+            <li><button class="cat-filter-btn" data-cat="vegetables">🍺 Пиво <span class="cf-count">10</span></button></li>
+            <li><button class="cat-filter-btn" data-cat="fruits">🥤 Напитки <span class="cf-count">9</span></button></li>
+            <li><button class="cat-filter-btn" data-cat="dairy">🍿 Снеки и чипсы <span class="cf-count">7</span></button></li>
+            <li><button class="cat-filter-btn" data-cat="meat">🥩 Закуски к пиву <span class="cf-count">5</span></button></li>
+            <li><button class="cat-filter-btn" data-cat="bakery">🍞 Сухарики и хлебцы <span class="cf-count">5</span></button></li>
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <h3>Цена, ₽</h3>
+          <div class="price-range">
+            <div class="price-inputs">
+              <input type="number" id="priceMin" placeholder="от" min="0" value="0"/>
+              <span>—</span>
+              <input type="number" id="priceMax" placeholder="до" min="0" value="1000"/>
+            </div>
+            <button class="btn btn-outline" id="priceApply" style="width:100%;justify-content:center;margin-top:10px">Применить</button>
+          </div>
+        </div>
+        <div class="sidebar-block">
+          <h3>Фильтры</h3>
+          <label class="check-label"><input type="checkbox" id="chkSale"/> Только акции</label>
+          <label class="check-label"><input type="checkbox" id="chkNew"/> Новинки</label>
+          <label class="check-label"><input type="checkbox" id="chkInstock" checked/> В наличии</label>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <div class="catalog-main">
+        <div class="catalog-toolbar">
+          <div class="catalog-found">Показано: <strong>36</strong> товаров</div>
+          <div class="catalog-sort">
+            <label>Сортировка:</label>
+            <select id="sortSelect">
+              <option value="default">По умолчанию</option>
+              <option value="price-asc">Цена ↑</option>
+              <option value="price-desc">Цена ↓</option>
+              <option value="name">По названию</option>
+            </select>
+          </div>
+          <button class="sidebar-toggle-btn" id="sidebarToggle">⚙ Фильтры</button>
+        </div>
+        <div class="products-grid">
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <span class="product-badge new">Хит</span>
+            <img src="../img/zhigulevkoe.webp" alt="Пиво «Жигулёвское» светлое" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Пиво «Жигулёвское» светлое</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">189 ₽</span>
+              <button class="btn-add" onclick="addToCart('v1','Пиво «Жигулёвское» светлое',189,'../img/zhigulevkoe.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <img src="../img/cheshskoe-svetloe.webp" alt="Пиво «Чешское» светлое" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Пиво «Чешское» светлое</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">99 ₽</span>
+              <button class="btn-add" onclick="addToCart('v2','Пиво «Чешское» светлое',99,'../img/cheshskoe-svetloe.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <img src="../img/temnoe-pivo.webp" alt="Пиво тёмное «Портер»" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Пиво тёмное «Портер»</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">119 ₽</span>
+              <button class="btn-add" onclick="addToCart('v3','Пиво тёмное «Портер»',119,'../img/temnoe-pivo.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <img src="../img/pivo-ne-fil-trovannoe.webp" alt="Пиво нефильтрованное «Янтарное»" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Пиво нефильтрованное «Янтарное»</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">110 ₽</span>
+              <button class="btn-add" onclick="addToCart('v4','Пиво нефильтрованное «Янтарное»',110,'../img/pivo-ne-fil-trovannoe.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <span class="product-badge sale">−22%</span>
+            <img src="../img/pivo-pshenichnoe.webp" alt="Пиво пшеничное «Вайцен»" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Пиво пшеничное «Вайцен»</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">105 ₽</span>
+              <span class="product-price-old">179 ₽</span>
+              <button class="btn-add" onclick="addToCart('v5','Пиво пшеничное «Вайцен»',105,'../img/pivo-pshenichnoe.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <img src="../img/pivo-kraftovoe.webp" alt="Пиво крафтовое IPA" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Пиво крафтовое IPA</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">119 ₽</span>
+              <button class="btn-add" onclick="addToCart('v6','Пиво крафтовое IPA',119,'../img/pivo-kraftovoe.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <img src="../img/bezalkogol-noe.webp" alt="Пиво безалкогольное" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Пиво безалкогольное</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">89 ₽</span>
+              <button class="btn-add" onclick="addToCart('v7','Пиво безалкогольное',89,'../img/bezalkogol-noe.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <span class="product-badge new">Новинка</span>
+            <img src="../img/sidr-jablochnyj.webp" alt="Сидр яблочный" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Сидр яблочный</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">79 ₽</span>
+              <button class="btn-add" onclick="addToCart('v8','Сидр яблочный',79,'../img/kykyryza.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="vegetables">
+          <div class="product-img">
+            <img src="../img/bavarskoe-pivo.webp" alt="Пиво «Баварское» 1.5 л" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Пиво «Баварское» 1.5 л</div>
+            <div class="product-weight">1.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">205 ₽</span>
+              <button class="btn-add" onclick="addToCart('v9','Пиво «Баварское» 1.5 л',205,'../img/ticva.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="fruits">
+          <div class="product-img">
+            <span class="product-badge sale">−19%</span>
+            <img src="../img/djushes.webp" alt="Лимонад «Дюшес»" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Лимонад «Дюшес»</div>
+            <div class="product-weight">1 л</div>
+            <div class="product-price-row">
+              <span class="product-price">95 ₽</span>
+              <span class="product-price-old">159 ₽</span>
+              <button class="btn-add" onclick="addToCart('f1','Лимонад «Дюшес»',95,'../img/apple.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="fruits">
+          <div class="product-img">
+            <img src="../img/mineralka.webp" alt="Вода минеральная газированная" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Вода минеральная газированная</div>
+            <div class="product-weight">1 л</div>
+            <div class="product-price-row">
+              <span class="product-price">60 ₽</span>
+              <button class="btn-add" onclick="addToCart('f2','Вода минеральная газированная',60,'../img/banana.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="fruits">
+          <div class="product-img">
+            <span class="product-badge new">Хит</span>
+            <img src="../img/bern.webp" alt="Энергетик «bern»" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Энергетик «bern»</div>
+            <div class="product-weight">0.5 л</div>
+            <div class="product-price-row">
+              <span class="product-price">140 ₽</span>
+              <button class="btn-add" onclick="addToCart('f3','Энергетик «bern»',140,'../img/flesh.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="fruits">
+          <div class="product-img">
+            <span class="product-badge sale">−19%</span>
+            <img src="../img/energetik.webp" alt="энергетик lit energy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">энергетик lit energy</div>
+            <div class="product-weight">1 шт</div>
+            <div class="product-price-row">
+              <span class="product-price">105 ₽</span>
+              <span class="product-price-old">140 ₽</span>
+              <button class="btn-add" onclick="addToCart('f4','энергетик lit energy',140,'../img/avokado.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="fruits">
+          <div class="product-img">
+            <img src="../img/flesh.webp" alt="энергетик «flash»" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">энергетик «flash»</div>
+            <div class="product-weight">3 шт</div>
+            <div class="product-price-row">
+              <span class="product-price">85 ₽</span>
+              <button class="btn-add" onclick="addToCart('f5','энергетик «flash»',85,'../img/flesh.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="fruits">
+          <div class="product-img">
+            <img src="../img/mors.webp" alt="Морс клюквенный" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Морс клюквенный</div>
+            <div class="product-weight">500 г</div>
+            <div class="product-price-row">
+              <span class="product-price">100 ₽</span>
+              <button class="btn-add" onclick="addToCart('f6','Морс клюквенный',100,'../img/vinograd.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="fruits">
+          <div class="product-img">
+            <span class="product-badge new">Сезон</span>
+            <img src="../img/kvas.webp" alt="Квас " style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Квас</div>
+            <div class="product-weight"> 2л</div>
+            <div class="product-price-row">
+              <span class="product-price">230 ₽</span>
+              <button class="btn-add" onclick="addToCart('f7','Квас',230,'../img/arbyz.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="fruits">
+          <div class="product-img">
+            <img src="../img/jaguar.webp" alt="Энергетический напиток jaguar»" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Энергетический напиток jaguar»</div>
+            <div class="product-weight">1 шт</div>
+            <div class="product-price-row">
+              <span class="product-price">149 ₽</span>
+              <button class="btn-add" onclick="addToCart('f8','Энергетический напиток jaguar»',149,'../img/mango.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="dairy">
+          <div class="product-img">
+            <span class="product-badge new">Хит</span>
+            <img src="../img/chipsy.webp" alt="Чипсы со вкусом сметаны и лука" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Чипсы со вкусом сметаны и лука</div>
+            <div class="product-weight">140 г</div>
+            <div class="product-price-row">
+              <span class="product-price">180 ₽</span>
+              <button class="btn-add" onclick="addToCart('d1','Чипсы со вкусом сметаны и лука',180,'../img/milk.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="dairy">
+          <div class="product-img">
+            <img src="../img/chipsy-paprika.webp" alt="Чипсы со вкусом паприки" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Чипсы со вкусом паприки</div>
+            <div class="product-weight">140 г</div>
+            <div class="product-price-row">
+              <span class="product-price">180 ₽</span>
+              <button class="btn-add" onclick="addToCart('d2','Чипсы со вкусом паприки',180,'../img/smetana.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="dairy">
+          <div class="product-img">
+            <img src="../img/kukuruznye-palochki.webp" alt="Кукурузные палочки солёные" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Кукурузные палочки солёные</div>
+            <div class="product-weight">140 г</div>
+            <div class="product-price-row">
+              <span class="product-price">180 ₽</span>
+              <button class="btn-add" onclick="addToCart('d3','Кукурузные палочки солёные',180,'../img/tvorog.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="dairy">
+          <div class="product-img">
+            <img src="../img/tuk.webp" alt="Печенье Tuc" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Печенье Tuc</div>
+            <div class="product-weight">200 г</div>
+            <div class="product-price-row">
+              <span class="product-price">180 ₽</span>
+              <button class="btn-add" onclick="addToCart('d4','Печенье Tuc',180,'../img/maslo.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="dairy">
+          <div class="product-img">
+            <img src="../img/kesh-ju.webp" alt="Орешки кешью солёные" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Орешки кешью солёные</div>
+            <div class="product-weight">1 л</div>
+            <div class="product-price-row">
+              <span class="product-price">180 ₽</span>
+              <button class="btn-add" onclick="addToCart('d5','Орешки кешью солёные',180,'../img/kefir.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="dairy">
+          <div class="product-img">
+            <span class="product-badge sale">−20%</span>
+            <img src="../img/arahis.webp" alt="Арахис солёный жареный" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Арахис солёный жареный</div>
+            <div class="product-weight">250 г</div>
+            <div class="product-price-row">
+              <span class="product-price">149 ₽</span>
+              <span class="product-price-old">180 ₽</span>
+              <button class="btn-add" onclick="addToCart('d6','Арахис солёный жареный',149,'../img/egyrt.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="dairy">
+          <div class="product-img">
+            <img src="../img/syrnye-shariki.webp" alt="Сырные шарики хрустящие" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Сырные шарики хрустящие</div>
+            <div class="product-weight">300 г</div>
+            <div class="product-price-row">
+              <span class="product-price">269 ₽</span>
+              <button class="btn-add" onclick="addToCart('d7','Сырные шарики хрустящие',269,'../img/sir.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="meat">
+          <div class="product-img">
+            <span class="product-badge new">Хит</span>
+            <img src="../img/kryl-ja.webp" alt="Куриные крылышки копчёные" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Куриные крылышки копчёные</div>
+            <div class="product-weight">300 г</div>
+            <div class="product-price-row">
+              <span class="product-price">289 ₽</span>
+              <button class="btn-add" onclick="addToCart('m1','Куриные крылышки копчёные',289,'../img/kyrica.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="meat">
+          <div class="product-img">
+            <img src="../img/govjadina.webp" alt="Вяленая говядина" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Вяленая говядина</div>
+            <div class="product-weight">100 г</div>
+            <div class="product-price-row">
+              <span class="product-price">199 ₽</span>
+              <button class="btn-add" onclick="addToCart('m2','Вяленая говядина',199,'../img/korova.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="meat">
+          <div class="product-img">
+            <img src="../img/kolbaski.webp" alt="Колбаски охотничьи копчёные" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Колбаски охотничьи копчёные</div>
+            <div class="product-weight">200 г</div>
+            <div class="product-price-row">
+              <span class="product-price">279 ₽</span>
+              <button class="btn-add" onclick="addToCart('m3','Колбаски охотничьи копчёные',279,'../img/svinya.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="meat">
+          <div class="product-img">
+            <span class="product-badge sale">−19%</span>
+            <img src="../img/rybnye-sneki.webp" alt="Снеки рыбные сушёные" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Снеки рыбные сушёные</div>
+            <div class="product-weight">100 г</div>
+            <div class="product-price-row">
+              <span class="product-price">219 ₽</span>
+              <span class="product-price-old">269 ₽</span>
+              <button class="btn-add" onclick="addToCart('m4','Снеки рыбные сушёные',219,'../img/farsh.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="bakery">
+          <div class="product-img">
+            <img src="../img/suhari-s-chesnokokm.webp" alt="Сухарики ржаные с чесноком" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Сухарики ржаные с чесноком</div>
+            <div class="product-weight">100 г</div>
+            <div class="product-price-row">
+              <span class="product-price">69 ₽</span>
+              <button class="btn-add" onclick="addToCart('b1','Сухарики ржаные с чесноком',69,'../img/xleb.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="bakery">
+          <div class="product-img">
+            <span class="product-badge new">Новинка</span>
+            <img src="../img/hlebtsy-pshen.webp" alt="Хлебцы пшеничные хрустящие" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Хлебцы пшеничные хрустящие</div>
+            <div class="product-weight">100 г</div>
+            <div class="product-price-row">
+              <span class="product-price">59 ₽</span>
+              <button class="btn-add" onclick="addToCart('b2','Хлебцы пшеничные хрустящие',59,'../img/kryasani.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="bakery">
+          <div class="product-img">
+            <img src="../img/grenki-s-chesnokom.webp" alt="Гренки чесночные" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Гренки чесночные</div>
+            <div class="product-weight">120 г</div>
+            <div class="product-price-row">
+              <span class="product-price">70 ₽</span>
+              <button class="btn-add" onclick="addToCart('b3','Гренки чесночные',70,'../img/baget.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-cat="bakery">
+          <div class="product-img">
+            <img src="../img/solomka.webp" alt="Соломка солёная" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Соломка солёная</div>
+            <div class="product-weight">200 г</div>
+            <div class="product-price-row">
+              <span class="product-price">105 ₽</span>
+              <button class="btn-add" onclick="addToCart('b4','Соломка солёная',105,'../img/tort.webp')" title="В корзину">+</button>
+            </div>
+          </div>
+        </div>
+
+       
+      
+
+      </div>
+        <h3>Ничего не найдено</h3>
+          <p>Попробуйте изменить параметры фильтрации</p>
+          <button class="btn btn-primary" onclick="resetFilters()">Сбросить фильтры</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/index.html" class="nav-logo">
+  <div class="logo-leaf">
+    <img src="/img/logo.webp" alt="Свежесть">
+  </div>
+  Свежесть
+</a>
+        <p class="footer-desc">Пиво, напитки, чипсы и снеки — каждый день.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Магазин</h4>
+        <ul>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">О нас</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="footer-contact-item"><span>📞</span><span>+7 (999) 234-56-78</span></div>
+        <div class="footer-contact-item"><span>🕐</span><span>Пн–Вс: 8:00 – 22:00</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Свежесть</span>
+      <span>Сделано с ❤️ для любителей свежего</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  const cards = document.querySelectorAll('.product-card');
+  const filterBtns = document.querySelectorAll('.cat-filter-btn');
+  const foundCount = document.getElementById('foundCount');
+  const sortSelect = document.getElementById('sortSelect');
+  const priceApply = document.getElementById('priceApply');
+  const chkSale = document.getElementById('chkSale');
+  const chkNew = document.getElementById('chkNew');
+  const chkInstock = document.getElementById('chkInstock');
+  const grid = document.querySelector('.products-grid');
+
+  let activeCat = 'all';
+
+  function applyFilters() {
+    const priceMin = parseInt(document.getElementById('priceMin').value) || 0;
+    const priceMax = parseInt(document.getElementById('priceMax').value) || 99999;
+    const onlySale = chkSale.checked;
+    const onlyNew = chkNew.checked;
+    const onlyStock = chkInstock.checked;
+
+    let visible = 0;
+    cards.forEach(card => {
+      const cat = card.dataset.cat;
+      const price = parseInt(card.querySelector('.product-price').textContent) || 0;
+      const hasSale = !!card.querySelector('.product-badge.sale');
+      const hasNew = !!card.querySelector('.product-badge.new');
+      const outOfStock = card.classList.contains('out-of-stock');
+
+      const catOk = activeCat === 'all' || cat === activeCat;
+      const priceOk = price >= priceMin && price <= priceMax;
+      const saleOk = !onlySale || hasSale;
+      const newOk = !onlyNew || hasNew;
+      const stockOk = !onlyStock || !outOfStock;
+
+      const show = catOk && priceOk && saleOk && newOk && stockOk;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    if (foundCount) foundCount.textContent = visible;
+
+    // Sort
+    if (sortSelect && sortSelect.value !== 'default') {
+      const items = [...cards].filter(c => c.style.display !== 'none');
+      items.sort((a, b) => {
+        const pa = parseInt(a.querySelector('.product-price').textContent) || 0;
+        const pb = parseInt(b.querySelector('.product-price').textContent) || 0;
+        if (sortSelect.value === 'price-asc') return pa - pb;
+        if (sortSelect.value === 'price-desc') return pb - pa;
+        if (sortSelect.value === 'name') {
+          return a.querySelector('.product-name').textContent
+            .localeCompare(b.querySelector('.product-name').textContent);
+        }
+        return 0;
+      });
+      items.forEach(c => grid.appendChild(c));
+    }
+  }
+
+  // Category buttons
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.dataset.cat;
+      applyFilters();
+    });
+  });
+
+  // Price, checkboxes, sort
+  if (priceApply) priceApply.addEventListener('click', applyFilters);
+  if (chkSale) chkSale.addEventListener('change', applyFilters);
+  if (chkNew) chkNew.addEventListener('change', applyFilters);
+  if (chkInstock) chkInstock.addEventListener('change', applyFilters);
+  if (sortSelect) sortSelect.addEventListener('change', applyFilters);
+
+  // Mobile sidebar toggle
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', () => {
+      document.querySelector('.catalog-sidebar').classList.toggle('open');
+    });
+  }
+
+  // URL param for category
+  const urlCat = new URLSearchParams(window.location.search).get('cat');
+  if (urlCat) {
+    activeCat = urlCat;
+    filterBtns.forEach(b => b.classList.remove('active'));
+    const btn = document.querySelector(`[data-cat="${urlCat}"]`);
+    if (btn) btn.classList.add('active');
+  }
+
+  applyFilters();
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Корзина — Свежесть</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/cart.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+   <a href="/index.html" class="nav-logo">
+  <div class="logo-leaf">
+    <img src="/img/logo.webp" alt="Свежесть">
+  </div>
+  Свежесть
+</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="catalog.html">Каталог</a></li>
+      <li><a href="about.html">О нас</a></li>
+      
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart active">
+        <span>🛒</span>
+        <span class="cart-label">Корзина</span>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="../index.html">Главная</a>
+  <a href="catalog.html">Каталог</a>
+  <a href="about.html">О нас</a>
+  
+  <a href="contacts.html">Контакты</a>
+  <a href="cart.html" class="mob-cart active">🛒 Корзина (<span class="cart-count">0</span>)</a>
+</div>
+
+<main>
+  <section class="cart-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Главная</a>
+        <span class="sep">›</span>
+        <span>Корзина</span>
+      </div>
+      <h1 class="cart-title">Ваша <em>корзина</em></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cart-layout" id="cartLayout">
+
+      <!-- CART ITEMS -->
+      <div class="cart-items-col" id="cartItemsCol">
+        <!-- rendered by JS -->
+      </div>
+
+      <!-- ORDER SUMMARY -->
+      <aside class="cart-summary" id="cartSummary">
+        <div class="summary-card">
+          <h2>Итого</h2>
+
+          <div class="summary-row">
+            <span>Товаров:</span>
+            <strong id="summaryCount">0</strong>
+          </div>
+          <div class="summary-row">
+            <span>Стоимость:</span>
+            <strong id="summarySubtotal">0 ₽</strong>
+          </div>
+          <div class="summary-row discount-row" id="discountRow" style="display:none">
+            <span id="discountLabel">Скидка:</span>
+            <strong id="discountValue" class="discount-value"></strong>
+          </div>
+          <div class="summary-row promo-row">
+            <input type="text" id="promoInput" placeholder="Промокод" class="promo-input"/>
+            <button class="btn btn-outline" id="promoBtn">OK</button>
+          </div>
+          <div class="promo-msg" id="promoMsg"></div>
+
+          <div class="summary-total-row">
+            <span>К оплате:</span>
+            <strong id="summaryTotal">0 ₽</strong>
+          </div>
+
+          <button class="btn btn-primary btn-checkout" id="checkoutBtn">
+            Оформить заказ →
+          </button>
+
+          <a href="catalog.html" class="btn btn-outline btn-continue">
+            ← Продолжить покупки
+          </a>
+
+          <div class="summary-badges">
+            <div class="sbadge">🔒 Безопасная оплата</div>
+            <div class="sbadge">↩️ Возврат без вопросов</div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="cart-empty" id="cartEmpty" style="display:none">
+      <div class="cart-empty-icon">🛒</div>
+      <h2>Корзина пуста</h2>
+      <p>Добавьте товары из каталога, чтобы начать покупки</p>
+      <a href="catalog.html" class="btn btn-primary">Перейти в каталог →</a>
+    </div>
+
+    <!-- ORDER SUCCESS -->
+    <div class="order-success" id="orderSuccess" style="display:none">
+      <div class="os-icon">✅</div>
+      <h2>Заказ оформлен!</h2>
+      <p>Мы свяжемся с вами в течение 15 минут для подтверждения заказа.</p>
+      <a href="catalog.html" class="btn btn-primary">Продолжить покупки</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+       <a href="/index.html" class="nav-logo">
+  <div class="logo-leaf">
+    <img src="/img/logo.webp" alt="Свежесть">
+  </div>
+  Свежесть
+</a>
+        <p class="footer-desc">Пиво, напитки, чипсы и снеки — каждый день.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Магазин</h4>
+        <ul>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">О нас</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="footer-contact-item"><span>📞</span><span>+7 (999) 234-56-78</span></div>
+        <div class="footer-contact-item"><span>🕐</span><span>Пн–Вс: 8:00 – 22:00</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Свежесть</span>
+      <span>Сделано с ❤️ для любителей свежего</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+/* ── Промокоды: код → процент скидки ── */
+const PROMO_CODES = { 'СВЕЖЕСТЬ15': 15, 'FRESH10': 10, 'SUMMER20': 20 };
+let appliedDiscount  = 0;
+let appliedPromoCode = '';
+
+function declItems(n) {
+  if (n % 10 === 1 && n % 100 !== 11) return 'товар';
+  if ([2,3,4].includes(n % 10) && ![12,13,14].includes(n % 100)) return 'товара';
+  return 'товаров';
+}
+
+function getItemImg(item) {
+  if (item.img) {
+    return '<img src="' + item.img + '" alt="" style="width:56px;height:56px;object-fit:cover;border-radius:8px;">';
+  }
+  return '<div style="width:56px;height:56px;background:#e8f5e9;border-radius:8px;"></div>';
+}
+
+function renderCart() {
+  const cart    = getCart();
+  const layout  = document.getElementById('cartLayout');
+  const empty   = document.getElementById('cartEmpty');
+  const success = document.getElementById('orderSuccess');
+
+  if (!cart.length) {
+    layout.style.display  = 'none';
+    empty.style.display   = 'flex';
+    success.style.display = 'none';
+    return;
+  }
+
+  layout.style.display = 'grid';
+  empty.style.display  = 'none';
+
+  const col = document.getElementById('cartItemsCol');
+  col.innerHTML = `
+    <div class="cart-items-header">
+      <h2>${cart.length} ${declItems(cart.length)} в корзине</h2>
+      <button class="btn-clear-cart" onclick="clearAllCart()">Очистить корзину</button>
+    </div>
+    <div class="cart-items-list">
+      ${cart.map(item => `
+        <div class="cart-item" id="ci-${item.id}">
+          <div class="ci-img">${getItemImg(item)}</div>
+          <div class="ci-info">
+            <div class="ci-name">${item.name}</div>
+            <div class="ci-price-unit">${item.price} ₽ / шт</div>
+          </div>
+          <div class="ci-qty">
+            <button class="qty-btn" onclick="changeQty('${item.id}', -1)">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty('${item.id}', 1)">+</button>
+          </div>
+          <div class="ci-total">${item.price * item.qty} ₽</div>
+          <button class="ci-remove" onclick="removeItem('${item.id}')" title="Удалить">✕</button>
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+  const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const count    = cart.reduce((s, i) => s + i.qty, 0);
+  const discount = appliedDiscount > 0 ? Math.round(subtotal * appliedDiscount / 100) : 0;
+  const total    = subtotal - discount;
+
+  document.getElementById('summaryCount').textContent    = count + ' ' + declItems(count);
+
+  const subtotalEl  = document.getElementById('summarySubtotal');
+  const discountRow = document.getElementById('discountRow');
+
+  if (discount > 0) {
+    subtotalEl.innerHTML = '<s class="old-price">' + subtotal + ' ₽</s>&nbsp;' + (subtotal - discount) + ' ₽';
+    discountRow.style.display = 'flex';
+    document.getElementById('discountLabel').textContent = 'Скидка ' + appliedDiscount + '% (' + appliedPromoCode + '):';
+    document.getElementById('discountValue').textContent = '−' + discount + ' ₽';
+  } else {
+    subtotalEl.textContent    = subtotal + ' ₽';
+    discountRow.style.display = 'none';
+  }
+
+  const totalEl = document.getElementById('summaryTotal');
+  totalEl.textContent = total + ' ₽';
+}
+
+function applyPromo() {
+  const input = document.getElementById('promoInput');
+  const msg   = document.getElementById('promoMsg');
+  const btn   = document.getElementById('promoBtn');
+  const code  = input.value.trim().toUpperCase();
+
+  if (appliedDiscount > 0) {
+    appliedDiscount  = 0;
+    appliedPromoCode = '';
+    input.value      = '';
+    input.disabled   = false;
+    btn.textContent  = 'OK';
+    btn.className    = 'btn btn-outline';
+    msg.textContent  = '';
+    msg.className    = 'promo-msg';
+    renderCart();
+    return;
+  }
+
+  if (!code) {
+    msg.textContent = '⚠️ Введите промокод';
+    msg.className   = 'promo-msg promo-err';
+    return;
+  }
+
+  if (PROMO_CODES[code]) {
+    appliedDiscount  = PROMO_CODES[code];
+    appliedPromoCode = code;
+    input.disabled   = true;
+    btn.textContent  = '✕ Сбросить';
+    btn.className    = 'btn btn-outline promo-reset-btn';
+    msg.innerHTML    = '🎉 Промокод <strong>' + code + '</strong> применён — скидка <strong>' + appliedDiscount + '%</strong>!';
+    msg.className    = 'promo-msg promo-ok';
+    renderCart();
+    const totalEl = document.getElementById('summaryTotal');
+    totalEl.classList.remove('total-pop');
+    void totalEl.offsetWidth;
+    totalEl.classList.add('total-pop');
+  } else {
+    msg.textContent = '❌ Промокод не найден. Попробуйте СВЕЖЕСТЬ15';
+    msg.className   = 'promo-msg promo-err';
+    input.classList.add('promo-shake');
+    setTimeout(() => input.classList.remove('promo-shake'), 500);
+  }
+}
+
+document.getElementById('promoBtn').addEventListener('click', applyPromo);
+document.getElementById('promoInput').addEventListener('keydown', e => { if (e.key === 'Enter') applyPromo(); });
+
+function removeItem(id) { removeFromCart(id); renderCart(); }
+
+function clearAllCart() {
+  if (!confirm('Очистить корзину?')) return;
+  localStorage.removeItem('svezhost_cart');
+  updateCartBadge();
+  renderCart();
+}
+
+document.getElementById('checkoutBtn').addEventListener('click', () => {
+  const cart = getCart();
+  if (!cart.length) return;
+  localStorage.removeItem('svezhost_cart');
+  updateCartBadge();
+  document.getElementById('cartLayout').style.display   = 'none';
+  document.getElementById('cartEmpty').style.display    = 'none';
+  document.getElementById('orderSuccess').style.display = 'flex';
+});
+
+renderCart();
+</script>
+</body>
+</html>

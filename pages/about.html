@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>О нас — Свежесть</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/about.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+   <a href="/index.html" class="nav-logo">
+  <div class="logo-leaf">
+    <img src="/img/logo.webp" alt="Свежесть">
+  </div>
+  Свежесть
+</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Главная</a></li>
+      <li><a href="catalog.html">Каталог</a></li>
+      <li><a href="about.html" class="active">О нас</a></li>
+      
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart"><span>🛒</span><span class="cart-label">Корзина</span><span class="cart-count">0</span></a>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="../index.html">Главная</a>
+  <a href="catalog.html">Каталог</a>
+  <a href="about.html" class="active">О нас</a>
+  
+  <a href="contacts.html">Контакты</a>
+  <a href="cart.html" class="mob-cart">🛒 Корзина (<span class="cart-count">0</span>)</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <div class="about-hero-bg"></div>
+    <div class="container about-hero-inner">
+      <div class="about-hero-text anim-fadeup">
+        <div class="breadcrumb"><a href="../index.html">Главная</a><span class="sep">›</span><span>О нас</span></div>
+        <div class="section-label">Наша история</div>
+        <h1 class="about-title">5 лет свежести<br>и <em>честности</em></h1>
+        <p>С 2021 года мы привозим лучшее пиво, напитки и снеки от проверенных поставщиков жителям нашего города. Никаких посредников, никаких лишних складов — только свежие напитки и закуски с поставки.</p>
+      </div>
+      <div class="about-hero-card anim-fadeup anim-delay2">
+  <div class="ahc-big" style="width:110%;margin-left:-5%;overflow:hidden;border-radius:16px;animation:none;">
+  <video autoplay muted loop playsinline style="width:100%;display:block;border-radius:inherit;">
+    <source src="../img/video-project-2-1.webm" type="video/webm">
+  </video>
+</div>
+        <div class="ahc-stats">
+          <div class="ahc-stat"><strong>2021</strong><span>год основания</span></div>
+          <div class="ahc-stat"><strong>40+</strong><span>поставщиков-партнёров</span></div>
+          <div class="ahc-stat"><strong>15 000+</strong><span>довольных клиентов</span></div>
+          <div class="ahc-stat"><strong>500+</strong><span>товаров в каталоге</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- TEAM -->
+  <section class="section team-section">
+    <div class="container">
+      <div data-reveal>
+        <div class="section-label">Команда</div>
+        <h2 class="section-title">Люди за <em>Свежестью</em></h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card" data-reveal data-delay="0s">
+          <div class="team-avatar"><img src="../images/team/member-1.svg" alt="Сотрудник 1" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <h3>Евгений Николаевич</h3>
+          <span>Основатель и CEO</span>
+          <p>«Каждый день я думаю о том, чтобы наши клиенты получали лучшее.»</p>
+        </div>
+        <div class="team-card" data-reveal data-delay=".1s">
+          <div class="team-avatar"><img src="../images/team/member-2.svg" alt="Сотрудник 2" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+          <h3>Светлана Арнольдовна</h3>
+          <span>Директор по качеству</span>
+          <p>«Я лично проверяю каждую новую поставку.»</p>
+        </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery-section">
+    <div class="container">
+      <div data-reveal>
+        <div class="section-label">Фотогалерея</div>
+        <h2 class="section-title">Наш <em>магазин</em></h2>
+      </div>
+      <div class="gallery-single" data-reveal data-delay=".1s">
+        <div class="gallery-item">
+          <img src="../img/magazinfoto.webp" alt="Магазин Свежесть" onerror="this.parentElement.classList.add('gallery-placeholder')">
+          <div class="gallery-overlay"><span>Наш магазин</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS CTA -->
+  <section class="partners-cta">
+    <div class="container">
+      <div class="pcta-inner" data-reveal>
+        <div class="pcta-emoji"><img src="../img/fermer.webp" alt="Партнёрство" style="width:120px;height:auto;"></div>
+        <div class="pcta-text">
+          <h2>Вы производитель напитков или снеков? Станьте нашим партнёром</h2>
+          <p>Мы всегда ищем новых поставщиков качественных продуктов. Оставьте заявку — мы свяжемся в течение 24 часов.</p>
+        </div>
+        <a href="contacts.html" class="btn btn-yellow">Написать нам →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+       <a href="/index.html" class="nav-logo">
+  <div class="logo-leaf">
+    <img src="/img/logo.webp" alt="Свежесть">
+  </div>
+  Свежесть
+</a>
+        <p class="footer-desc">Пиво, напитки, чипсы и снеки — каждый день.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Магазин</h4>
+        <ul>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">О нас</a></li>
+          
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="footer-contact-item"><span>📞</span><span>+7 (999) 234-56-78</span></div>
+        <div class="footer-contact-item"><span>🕐</span><span>Пн–Вс: 8:00 – 22:00</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2024 Свежесть</span><span>Сделано с ❤️</span></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
